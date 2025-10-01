@@ -76,7 +76,7 @@ typedef struct {
 
 typedef struct {
     SemaphoreHandle_t tp_intr_event;    /*!< Semaphore for tp interrupt */
-    lv_disp_rot_t rotate;               /*!< Rotation configuration for the display */
+    lv_disp_rotation_t rotate;               /*!< Rotation configuration for the display */
 } bsp_touch_int_t;
 
 static lv_disp_t *disp;

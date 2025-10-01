@@ -68,7 +68,7 @@ typedef enum {
     LV_DISP_ROT_90,
     LV_DISP_ROT_180,
     LV_DISP_ROT_270
-} lv_disp_rot_t;
+} lv_disp_rotation_t;
 
 /**
  * Display Driver structure to be registered by HAL.
@@ -317,14 +317,14 @@ lv_coord_t lv_disp_get_dpi(const lv_disp_t * disp);
  * @param disp pointer to a display (NULL to use the default display)
  * @param rotation rotation angle
  */
-void lv_disp_set_rotation(lv_disp_t * disp, lv_disp_rot_t rotation);
+void lv_disp_set_rotation(lv_disp_t * disp, lv_disp_rotation_t rotation);
 
 /**
  * Get the current rotation of this display.
  * @param disp pointer to a display (NULL to use the default display)
  * @return rotation angle
  */
-lv_disp_rot_t lv_disp_get_rotation(lv_disp_t * disp);
+lv_disp_rotation_t lv_disp_get_rotation(lv_disp_t * disp);
 
 //! @cond Doxygen_Suppress
 

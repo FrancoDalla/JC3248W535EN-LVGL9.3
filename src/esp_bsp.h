@@ -17,6 +17,7 @@
 #include "driver/i2c.h"
 #include "lvgl.h"
 #include "lv_port.h"
+#include "../libraries/lvgl/src/lv_api_map_v8.h"
 
 /**************************************************************************************************
  *  pinout
@@ -56,7 +57,7 @@ extern "C" {
 typedef struct {
     lvgl_port_cfg_t lvgl_port_cfg;  /*!< Configuration for the LVGL port */
     uint32_t buffer_size;           /*!< Size of the buffer for the screen in pixels */
-    lv_disp_rot_t rotate;           /*!< Rotation configuration for the display */
+    lv_disp_rotation_t rotate;           /*!< Rotation configuration for the display */
 } bsp_display_cfg_t;
 
 /**

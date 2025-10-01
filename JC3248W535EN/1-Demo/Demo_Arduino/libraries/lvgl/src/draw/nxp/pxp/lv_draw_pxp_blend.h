@@ -84,7 +84,7 @@ void lv_gpu_nxp_pxp_fill(lv_color_t * dest_buf, const lv_area_t * dest_area, lv_
  */
 void lv_gpu_nxp_pxp_blit(lv_color_t * dest_buf, const lv_area_t * dest_area, lv_coord_t dest_stride,
                          const lv_color_t * src_buf, const lv_area_t * src_area, lv_coord_t src_stride,
-                         lv_opa_t opa, lv_disp_rot_t angle);
+                         lv_opa_t opa, lv_disp_rotation_t angle);
 
 /**
  * BLock Image Transfer - copy rectangular image from src_buf to dst_buf with transformation.

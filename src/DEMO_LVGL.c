@@ -9,6 +9,7 @@
 #include <esp_chip_info.h>
 #include <esp_system.h>
 #include <esp_heap_caps.h>
+#include "../libraries/lvgl/src/lv_api_map_v8.h"
 
 static const char *TAG = "DEMO_LVGL";
 

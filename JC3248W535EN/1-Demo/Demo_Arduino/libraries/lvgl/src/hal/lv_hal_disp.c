@@ -561,7 +561,7 @@ lv_disp_draw_buf_t * lv_disp_get_draw_buf(lv_disp_t * disp)
  * @param disp pointer to a display (NULL to use the default display)
  * @param rotation rotation angle
  */
-void lv_disp_set_rotation(lv_disp_t * disp, lv_disp_rot_t rotation)
+void lv_disp_set_rotation(lv_disp_t * disp, lv_disp_rotation_t rotation)
 {
     if(disp == NULL) disp = lv_disp_get_default();
     if(disp == NULL) return;
@@ -575,7 +575,7 @@ void lv_disp_set_rotation(lv_disp_t * disp, lv_disp_rot_t rotation)
  * @param disp pointer to a display (NULL to use the default display)
  * @return rotation angle
  */
-lv_disp_rot_t lv_disp_get_rotation(lv_disp_t * disp)
+lv_disp_rotation_t lv_disp_get_rotation(lv_disp_t * disp)
 {
     if(disp == NULL) disp = lv_disp_get_default();
     if(disp == NULL) return LV_DISP_ROT_NONE;

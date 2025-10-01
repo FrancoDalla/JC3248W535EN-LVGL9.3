@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.dbclient-js": "javascript",
+        "lv_api_map_v9_1.h": "c",
+        "lv_api_map_v8.h": "c",
+        "esp_lcd_panel_ops.h": "c"
+    }
+}

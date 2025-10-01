@@ -44,7 +44,7 @@ typedef struct {
     uint32_t    trans_size;     /*!< Allocated buffer will be in SRAM to move framebuf */
     uint32_t    hres;           /*!< LCD display horizontal resolution */
     uint32_t    vres;           /*!< LCD display vertical resolution */
-    lv_disp_rot_t   sw_rotate;    /* Panel software rotate_mask */
+    lv_disp_rotation_t   sw_rotate;    /* Panel software rotate_mask */
     struct {
         unsigned int buff_dma: 1;    /*!< Allocated LVGL buffer will be DMA capable */
         unsigned int buff_spiram: 1; /*!< Allocated LVGL buffer will be in PSRAM */

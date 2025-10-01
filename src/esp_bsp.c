@@ -24,6 +24,7 @@
 #include "esp_rom_gpio.h"
 #include "esp_lcd_axs15231b.h"
 #include "bsp_err_check.h"
+#include "../libraries/lvgl/src/lv_api_map_v8.h"
 
 #include "lv_port.h"
 #include "display.h"
@@ -76,7 +77,7 @@ typedef struct {
 
 typedef struct {
     SemaphoreHandle_t tp_intr_event;    /*!< Semaphore for tp interrupt */
-    lv_disp_rot_t rotate;               /*!< Rotation configuration for the display */
+    lv_disp_rotation_t rotate;               /*!< Rotation configuration for the display */
 } bsp_touch_int_t;
 
 static lv_disp_t *disp;

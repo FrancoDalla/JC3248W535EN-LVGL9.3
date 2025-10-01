@@ -15,6 +15,7 @@
 #include "esp_lcd_panel_io.h"
 #include "esp_lcd_panel_ops.h"
 #include "esp_lcd_panel_interface.h"
+#include "../libraries/lvgl/src/lv_api_map_v8.h"
 
 #include "lv_port.h"
 #include "lvgl.h"
@@ -45,14 +46,14 @@ typedef struct lvgl_port_ctx_s {
 typedef struct {
     esp_lcd_panel_io_handle_t io_handle;    /* LCD panel IO handle */
     esp_lcd_panel_handle_t    panel_handle; /* LCD panel handle */
-    lv_disp_drv_t             disp_drv;     /* LVGL display driver */
+    //lv_disp_drv_t             disp_drv;     /* LVGL display driver */
 
     uint32_t                  trans_size;       /* Maximum size for one transport */
     lv_color_t                *trans_buf_1;     /* Buffer send to driver */
     lv_color_t                *trans_buf_2;     /* Buffer send to driver */
     lv_color_t                *trans_act;       /* Active buffer for sending to driver */
     SemaphoreHandle_t         trans_done_sem;   /* Semaphore for signaling idle transfer */
-    lv_disp_rot_t             sw_rotate;        /* Panel software rotation mask */
+    lv_disp_rotation_t             sw_rotate;        /* Panel software rotation mask */
 
     lvgl_port_wait_cb         draw_wait_cb;     /* Callback function for drawing */
 } lvgl_port_display_ctx_t;
@@ -82,7 +83,7 @@ static void lvgl_port_task_deinit(void);
 #if LVGL_PORT_HANDLE_FLUSH_READY
 static bool lvgl_port_flush_ready_callback(esp_lcd_panel_io_handle_t panel_io, esp_lcd_panel_io_event_data_t *edata, void *user_ctx);
 #endif
-static void lvgl_port_flush_callback(lv_disp_drv_t *drv, const lv_area_t *area, lv_color_t *color_map);
+static void lvgl_port_flush_callback(lv_display_t *drv, const lv_area_t *area, lv_color_t *color_map);
 #ifdef ESP_LVGL_PORT_TOUCH_COMPONENT
 static void lvgl_port_touchpad_read(lv_indev_drv_t *indev_drv, lv_indev_data_t *data);
 #endif

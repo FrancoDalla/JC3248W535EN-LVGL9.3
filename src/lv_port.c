@@ -19,6 +19,8 @@
 #include "lv_port.h"
 #include "lvgl.h"
 
+#include "../libraries/lvgl/src/lv_api_map_v8.h"
+
 #ifdef ESP_LVGL_PORT_TOUCH_COMPONENT
 #include "esp_lcd_touch.h"
 #endif
@@ -52,7 +54,7 @@ typedef struct {
     lv_color_t                *trans_buf_2;     /* Buffer send to driver */
     lv_color_t                *trans_act;       /* Active buffer for sending to driver */
     SemaphoreHandle_t         trans_done_sem;   /* Semaphore for signaling idle transfer */
-    lv_disp_rot_t             sw_rotate;        /* Panel software rotation mask */
+    lv_disp_rotation_t             sw_rotate;        /* Panel software rotation mask */
 
     lvgl_port_wait_cb         draw_wait_cb;     /* Callback function for drawing */
 } lvgl_port_display_ctx_t;
